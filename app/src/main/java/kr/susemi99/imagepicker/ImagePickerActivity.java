@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -96,7 +95,6 @@ public class ImagePickerActivity extends AppCompatActivity {
 
     do {
       String filePath = cursor.getString(dataColumnIndex);
-      Log.i("ImagePickerActivity : fetchAllImages", "|" + filePath);
       String imageId = cursor.getString(idColumnIndex);
 
 //      ImageItem item = new ImageItem(filePath, thumbnailPath(imageId));
@@ -110,6 +108,7 @@ public class ImagePickerActivity extends AppCompatActivity {
     folderAdapter.stopAdd();
   }
 
+  // get thumbnail. but not work on my emulator
   private String thumbnailPath(String imageId) {
     String[] projection = {MediaStore.Images.Thumbnails.DATA};
     ContentResolver contentResolver = getContentResolver();

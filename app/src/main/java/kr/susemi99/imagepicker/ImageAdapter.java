@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,9 +52,7 @@ public class ImageAdapter extends BaseAdapter {
     imageView.setImageBitmap(getThumbnail(viewGroup.getContext(), item.filePath));
 
     final View finalView = view;
-    view.postDelayed(() -> {
-      finalView.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, imageView.getWidth()));
-    }, 100);
+    view.postDelayed(() -> finalView.setLayoutParams(new GridView.LayoutParams(GridView.AUTO_FIT, imageView.getWidth())), 100);
     return view;
   }
 

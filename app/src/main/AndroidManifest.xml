@@ -3,6 +3,7 @@
           package="kr.susemi99.imagepicker">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -20,6 +21,8 @@
         <activity
             android:name=".ImagePickerActivity"
             android:theme="@style/NoActionBar"/>
+        <activity android:name=".ImageCropActivity">
+        </activity>
     </application>
 
 </manifest>
